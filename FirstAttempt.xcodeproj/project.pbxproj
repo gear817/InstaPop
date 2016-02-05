@@ -12,6 +12,12 @@
 		303A27C01C64060600CDF107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303A27BE1C64060600CDF107 /* Main.storyboard */; };
 		303A27C21C64060600CDF107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303A27C11C64060600CDF107 /* Assets.xcassets */; };
 		303A27C51C64060600CDF107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303A27C31C64060600CDF107 /* LaunchScreen.storyboard */; };
+		303A27D11C641E9B00CDF107 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D01C641E9B00CDF107 /* CollectionViewController.swift */; };
+		303A27D51C644EB100CDF107 /* CCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */; };
+		303A27D71C6468D600CDF107 /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D61C6468D600CDF107 /* NewPhotoViewController.swift */; };
+		303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D81C6468F100CDF107 /* ProfileViewController.swift */; };
+		303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27DA1C646D4B00CDF107 /* MapViewController.swift */; };
+		303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27DC1C646DDF00CDF107 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		303A27C11C64060600CDF107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		303A27C41C64060600CDF107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		303A27C61C64060600CDF107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303A27D01C641E9B00CDF107 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CCollectionViewCell.swift; path = ../CCollectionViewCell.swift; sourceTree = "<group>"; };
+		303A27D61C6468D600CDF107 /* NewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
+		303A27D81C6468F100CDF107 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		303A27DA1C646D4B00CDF107 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		303A27DC1C646DDF00CDF107 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +51,7 @@
 		303A27AE1C64060600CDF107 = {
 			isa = PBXGroup;
 			children = (
+				303A27DC1C646DDF00CDF107 /* MapKit.framework */,
 				303A27B91C64060600CDF107 /* FirstAttempt */,
 				303A27B81C64060600CDF107 /* Products */,
 			);
@@ -56,7 +70,12 @@
 			children = (
 				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
+				303A27D01C641E9B00CDF107 /* CollectionViewController.swift */,
+				303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */,
 				303A27BE1C64060600CDF107 /* Main.storyboard */,
+				303A27DA1C646D4B00CDF107 /* MapViewController.swift */,
+				303A27D61C6468D600CDF107 /* NewPhotoViewController.swift */,
+				303A27D81C6468F100CDF107 /* ProfileViewController.swift */,
 				303A27C11C64060600CDF107 /* Assets.xcassets */,
 				303A27C31C64060600CDF107 /* LaunchScreen.storyboard */,
 				303A27C61C64060600CDF107 /* Info.plist */,
@@ -136,8 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */,
+				303A27D11C641E9B00CDF107 /* CollectionViewController.swift in Sources */,
 				303A27BD1C64060600CDF107 /* ViewController.swift in Sources */,
+				303A27D51C644EB100CDF107 /* CCollectionViewCell.swift in Sources */,
+				303A27D71C6468D600CDF107 /* NewPhotoViewController.swift in Sources */,
 				303A27BB1C64060600CDF107 /* AppDelegate.swift in Sources */,
+				303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
