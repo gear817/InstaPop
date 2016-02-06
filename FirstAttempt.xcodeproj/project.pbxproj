@@ -18,7 +18,6 @@
 		303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D81C6468F100CDF107 /* ProfileViewController.swift */; };
 		303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27DA1C646D4B00CDF107 /* MapViewController.swift */; };
 		303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27DC1C646DDF00CDF107 /* MapKit.framework */; };
-		303A27FF1C66A5D600CDF107 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27FE1C66A5D600CDF107 /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		303A27D81C6468F100CDF107 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		303A27DA1C646D4B00CDF107 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		303A27DC1C646DDF00CDF107 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		303A27FE1C66A5D600CDF107 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */,
-				303A27FF1C66A5D600CDF107 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +51,6 @@
 		303A27AE1C64060600CDF107 = {
 			isa = PBXGroup;
 			children = (
-				303A27FE1C66A5D600CDF107 /* Firebase.framework */,
 				303A27DC1C646DDF00CDF107 /* MapKit.framework */,
 				303A27B91C64060600CDF107 /* FirstAttempt */,
 				303A27B81C64060600CDF107 /* Products */,
