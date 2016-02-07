@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
     
     @IBOutlet weak var imageView: UIImageView!
     
-    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
+ 
     
+    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
+
     
     
     
@@ -24,11 +28,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
 
     }
-    
-    
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellID", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
         
         return cell
     }
@@ -39,8 +41,24 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func onTapTakePicture(sender: UIBarButtonItem) {
+        let picker: UIImagePickerController = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = .Camera
+        self.imageView(picker, animated: true, completion: { _ in })
+    }
+    
+    
+    @IBAction func picFromLib(sender: AnyObject) {
+       let picker: UIImagePickerController = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = .PhotoLibrary
+        self.presentViewController(picker, animated: true, completion: { _ in })
+    }
+    
+    
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        let dvc = segue.destinationViewController as! CollectionViewController
 //        dvc.title = 
