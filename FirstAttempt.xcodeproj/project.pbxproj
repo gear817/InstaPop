@@ -18,6 +18,7 @@
 		303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D81C6468F100CDF107 /* ProfileViewController.swift */; };
 		303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27DA1C646D4B00CDF107 /* MapViewController.swift */; };
 		303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27DC1C646DDF00CDF107 /* MapKit.framework */; };
+		303A28011C691E2E00CDF107 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A28001C691E2E00CDF107 /* RegisterViewController.swift */; };
 		8DBE460C1C184E202C55B63E /* Pods_FirstAttempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F553548B11E321472D37336 /* Pods_FirstAttempt.framework */; };
 		DFC015571C67BA7C00414CDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015561C67BA7C00414CDE /* CoreLocation.framework */; };
 		DFC015591C67BA9700414CDE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015581C67BA9700414CDE /* Contacts.framework */; };
@@ -38,6 +39,7 @@
 		303A27D81C6468F100CDF107 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		303A27DA1C646D4B00CDF107 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		303A27DC1C646DDF00CDF107 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		303A28001C691E2E00CDF107 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7F553548B11E321472D37336 /* Pods_FirstAttempt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstAttempt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80E3B30739E7F878961EB6E /* Pods-FirstAttempt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.debug.xcconfig"; sourceTree = "<group>"; };
 		D91FB430FA6B3F3B8147289D /* Pods-FirstAttempt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
+				303A28001C691E2E00CDF107 /* RegisterViewController.swift */,
 				303A27D01C641E9B00CDF107 /* CollectionViewController.swift */,
 				303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */,
 				303A27BE1C64060600CDF107 /* Main.storyboard */,
@@ -245,6 +248,7 @@
 				303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */,
 				303A27D11C641E9B00CDF107 /* CollectionViewController.swift in Sources */,
 				303A27BD1C64060600CDF107 /* ViewController.swift in Sources */,
+				303A28011C691E2E00CDF107 /* RegisterViewController.swift in Sources */,
 				303A27D51C644EB100CDF107 /* CCollectionViewCell.swift in Sources */,
 				303A27D71C6468D600CDF107 /* NewPhotoViewController.swift in Sources */,
 				303A27BB1C64060600CDF107 /* AppDelegate.swift in Sources */,
