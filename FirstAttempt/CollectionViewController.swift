@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Photos
+import Firebase
 
 let reuseIdentifier = "PhotoCell"
 let albulmName = "App Folder1"
