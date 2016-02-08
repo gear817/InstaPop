@@ -41,12 +41,16 @@ class RegisterViewController: UIViewController {
         
         //store data
         
-        myRootRef.setValue(userEmail)
-        
-        
-        
-        
-        
+        myRootRef.createUser(userEmail, password: userPassword,
+            withValueCompletionBlock: { error, result in
+                
+                if error != nil {
+                    // There was an error creating the account
+                } else {
+                    let uid = result["uid"] as? String
+                    print("Successfully created user account with uid: \(uid)")
+                }
+        })
         // display alert message with confirmation
         var myAlert = UIAlertController(title: "Alert", message: "Registration is successful, thank you!", preferredStyle: UIAlertControllerStyle.Alert)
         let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default){ action in
