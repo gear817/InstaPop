@@ -8,18 +8,48 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+import Photos
+
+
 class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let resultCollections = PHAssetCollection.fetchAssetCollectionsWithType(.Moment, subtype: .Any, options: nil)
+        
+        resultCollections.enumerateObjectsUsingBlock({
+            (object, index, stop) -> Void in
+            
+            
+            let collection = object as! PHAssetCollection
+            
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            formatter.timeStyle = .ShortStyle
+            
+            
+            var date =  collection.startDate
+            var location = collection.approximateLocation?.coordinate
+            
+            
+            func dropPinForLocation(address: StopInfo) {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(address.latitude, address.longitude)
+                annotation.title = address.stopName
+                annotation.subtitle = "\(location)"
+                //  self.mapView.addAnnotation(annotation)
+                //   self.annotations.append(annotation)
+                self.mapView.addAnnotation(annotation)
+    
+        
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
 
     /*
@@ -31,5 +61,9 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    
+    
+    
 
 }

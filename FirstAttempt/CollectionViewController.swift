@@ -23,11 +23,12 @@ var picLocation: PHAsset = PHAsset()
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
     
 
-//    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
+    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
 
     
     override func viewDidAppear(animated: Bool) {
@@ -91,7 +92,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let picker : UIImagePickerController = UIImagePickerController()
         picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
-        
         picker.delegate = self
         picker.allowsEditing = false
     
@@ -100,9 +100,25 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
 
-
+    @IBAction func save(sender: AnyObject) {
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+    }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
+        if error == nil {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        } else {
+            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        let dvc = segue.destinationViewController as! CollectionViewController
 //        dvc.title = 
 //    }

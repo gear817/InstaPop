@@ -18,6 +18,7 @@
 		303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27D81C6468F100CDF107 /* ProfileViewController.swift */; };
 		303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A27DA1C646D4B00CDF107 /* MapViewController.swift */; };
 		303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27DC1C646DDF00CDF107 /* MapKit.framework */; };
+		DF1EFE7F1C692C18001FD3AB /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1EFE7E1C692C18001FD3AB /* Photos.framework */; };
 		DFC015571C67BA7C00414CDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015561C67BA7C00414CDE /* CoreLocation.framework */; };
 		DFC015591C67BA9700414CDE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015581C67BA9700414CDE /* Contacts.framework */; };
 		DFC0155B1C67BAB400414CDE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0155A1C67BAB400414CDE /* CloudKit.framework */; };
@@ -37,6 +38,7 @@
 		303A27D81C6468F100CDF107 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		303A27DA1C646D4B00CDF107 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		303A27DC1C646DDF00CDF107 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DF1EFE7E1C692C18001FD3AB /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		DFC015561C67BA7C00414CDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DFC015581C67BA9700414CDE /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		DFC0155A1C67BAB400414CDE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1EFE7F1C692C18001FD3AB /* Photos.framework in Frameworks */,
 				DFC0155B1C67BAB400414CDE /* CloudKit.framework in Frameworks */,
 				DFC015591C67BA9700414CDE /* Contacts.framework in Frameworks */,
 				DFC015571C67BA7C00414CDE /* CoreLocation.framework in Frameworks */,
@@ -60,6 +63,7 @@
 		303A27AE1C64060600CDF107 = {
 			isa = PBXGroup;
 			children = (
+				DF1EFE7E1C692C18001FD3AB /* Photos.framework */,
 				DFC0155A1C67BAB400414CDE /* CloudKit.framework */,
 				DFC015581C67BA9700414CDE /* Contacts.framework */,
 				DFC015561C67BA7C00414CDE /* CoreLocation.framework */,
