@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="311" y="27"/>
         </scene>
-        <!--Photos-->
+        <!--Activity Feed-->
         <scene sceneID="4KS-ym-P8S">
             <objects>
                 <viewController id="AdR-kD-Ydf" customClass="CollectionViewController" customModule="FirstAttempt" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,7 +159,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ksQ-w6-5rc" secondAttribute="trailing" constant="-20" id="vEt-dg-u56"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photos" id="z3I-2e-we8">
+                    <navigationItem key="navigationItem" title="Activity Feed" id="z3I-2e-we8">
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="5cy-Xc-Bdg">
                             <connections>
                                 <segue destination="5Wz-oy-xdD" kind="show" id="8l6-zV-L4B"/>
@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="1012" y="27"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="Y6R-75-2qZ">
             <objects>
                 <viewController id="5Wz-oy-xdD" customClass="ProfileViewController" customModule="FirstAttempt" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,7 +219,7 @@
                             <constraint firstItem="Nuu-bi-pgp" firstAttribute="firstBaseline" secondItem="fAN-Aw-mN4" secondAttribute="firstBaseline" id="tjs-u6-iFB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3oh-XR-l9K">
+                    <navigationItem key="navigationItem" title="Profile" id="3oh-XR-l9K">
                         <barButtonItem key="leftBarButtonItem" title="Map" id="p8D-NN-35Z">
                             <connections>
                                 <segue destination="Zm6-Ag-yu5" kind="show" id="c7H-Np-tuE"/>
@@ -267,7 +267,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-vC-W9u">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-vC-W9u">
                                 <rect key="frame" x="175" y="72" width="251" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="dMT-UK-wtj"/>
@@ -278,13 +278,13 @@
                                     <segment title="Direct"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="uni2" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uni2" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
                                 <rect key="frame" x="20" y="108" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="VmE-JX-oH1"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Write Caption..." translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Caption..." translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
                                 <rect key="frame" x="285" y="108" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

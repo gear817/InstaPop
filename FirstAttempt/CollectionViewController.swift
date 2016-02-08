@@ -9,9 +9,15 @@
 import UIKit
 import MapKit
 import Photos
+import CoreLocation
+
 
 let reuseIdentifier = "PhotoCell"
 let albulmName = "App Folder1"
+var location = CLLocation()
+var picLocation: PHAsset = PHAsset()
+
+
 
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -21,10 +27,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var collectionViewCell: UICollectionView!
     
 
-    
- 
-    
-    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
+//    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
 
     
     override func viewDidAppear(animated: Bool) {
@@ -59,15 +62,21 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         return 10
     }
     
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+//        var metadata: [NSObject : AnyObject] = info[UIImagePickerControllerMediaMetadata]
+//    }
+    
     
     @IBAction func onTapTakePicture(sender: UIBarButtonItem) {
         if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
             //load the camera interface
             let picker : UIImagePickerController = UIImagePickerController()
+            
             picker.sourceType = UIImagePickerControllerSourceType.Camera
             picker.delegate = self
             picker.allowsEditing = false
             self.presentViewController(picker, animated: true, completion: nil)
+            
         }else{
             //no camera available
             let alert = UIAlertController(title: "Error", message: "There is no camera available", preferredStyle: .Alert)
@@ -82,13 +91,16 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let picker : UIImagePickerController = UIImagePickerController()
         picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        
         picker.delegate = self
         picker.allowsEditing = false
+    
         self.presentViewController(picker, animated: true, completion: nil)
         
     }
-
     
+
+
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        let dvc = segue.destinationViewController as! CollectionViewController
