@@ -115,19 +115,11 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="292" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NRO-qJ-Low">
-                                                    <rect key="frame" x="26" y="24" width="240" height="128"/>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="NRO-qJ-Low" secondAttribute="bottom" constant="15" id="0lq-Ib-PQB"/>
-                                            <constraint firstItem="NRO-qJ-Low" firstAttribute="leading" secondItem="qGh-Ix-J2Q" secondAttribute="leadingMargin" constant="18" id="Znh-8G-CYz"/>
-                                            <constraint firstItem="NRO-qJ-Low" firstAttribute="top" secondItem="qGh-Ix-J2Q" secondAttribute="topMargin" constant="16" id="bhp-s4-WGa"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="NRO-qJ-Low" secondAttribute="trailing" constant="18" id="s3G-3Z-1pH"/>
-                                        </constraints>
+                                        <connections>
+                                            <segue destination="yP1-Hh-yS3" kind="show" id="7W9-rg-9U3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -147,7 +139,11 @@
                                                 <action selector="onTapTakePicture:" destination="AdR-kD-Ydf" id="3bf-Nd-7Lc"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Bdh-ln-M38"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Bdh-ln-M38">
+                                            <connections>
+                                                <action selector="picFromLib:" destination="AdR-kD-Ydf" id="OZh-4g-XAn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -172,7 +168,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewCell" destination="e6u-fI-RVe" id="SyF-u2-vA9"/>
-                        <outlet property="imageView" destination="NRO-qJ-Low" id="MA7-Sn-KGI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-wE-Q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +267,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-vC-W9u">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-vC-W9u">
                                 <rect key="frame" x="175" y="72" width="251" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="dMT-UK-wtj"/>
@@ -283,13 +278,13 @@
                                     <segment title="Direct"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="uni2" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uni2" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
                                 <rect key="frame" x="20" y="108" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="VmE-JX-oH1"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Write Caption..." translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Caption..." translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
                                 <rect key="frame" x="285" y="108" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
