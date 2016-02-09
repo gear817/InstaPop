@@ -274,6 +274,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="09R-gQ-BES">
                                                     <rect key="frame" x="26" y="29" width="240" height="128"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et3-Qa-mBQ">
+                                                    <rect key="frame" x="229" y="145" width="46" height="30"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -480,10 +483,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-r7-mta">
-                                <rect key="frame" x="20" y="244" width="240" height="30"/>
-                                <state key="normal" title="Add Location"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -493,12 +492,9 @@
                             <constraint firstItem="WMp-zf-xP2" firstAttribute="bottom" secondItem="N1u-dg-cVx" secondAttribute="bottom" id="C7y-0q-5xf"/>
                             <constraint firstItem="WMp-zf-xP2" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" id="MvN-4m-Oyp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N1u-dg-cVx" secondAttribute="trailing" constant="55" id="NVo-5v-4qp"/>
-                            <constraint firstItem="EPb-r7-mta" firstAttribute="top" secondItem="WMp-zf-xP2" secondAttribute="bottom" constant="8" symbolic="YES" id="UXx-S9-yHh"/>
-                            <constraint firstItem="EPb-r7-mta" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="leading" id="WZJ-u6-ECK"/>
                             <constraint firstItem="WMp-zf-xP2" firstAttribute="top" secondItem="cNw-vC-W9u" secondAttribute="bottom" constant="8" symbolic="YES" id="bPo-ms-m7m"/>
                             <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="WMp-zf-xP2" secondAttribute="top" id="hsy-F4-wh6"/>
                             <constraint firstItem="Q2Q-wS-0LQ" firstAttribute="top" secondItem="N1u-dg-cVx" secondAttribute="bottom" constant="364" id="lGE-Rf-XHX"/>
-                            <constraint firstItem="WMp-zf-xP2" firstAttribute="trailing" secondItem="EPb-r7-mta" secondAttribute="trailing" id="qCi-EN-Itn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f39-a1-och">
