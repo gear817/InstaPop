@@ -12,8 +12,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    var myRootRef = Firebase(url:"https://instapop.firebaseio.com/")
-
+    @IBOutlet weak var userNameTextfield: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,52 +21,60 @@ class RegisterViewController: UIViewController {
 
 
     @IBAction func onRegisterButtonTapped(sender: AnyObject) {
+        let userName = userNameTextfield.text
         let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextField.text
-        let userRepeatPassword = repeatPasswordTextField.text
+//        let userRepeatPassword = repeatPasswordTextField.text
         
         // check for empty fields
-        if (userEmail!.isEmpty || userPassword!.isEmpty || userRepeatPassword!.isEmpty) {
-            //display alert message
-            displayMyAlertMessage("All fields are required")
-            return;
-        }
-        
-        //check if passwords match
-        if (userPassword != userRepeatPassword) {
-            //display an alert message
-            displayMyAlertMessage("Passwords do not match")
-            return;
-        }
-        
-        //store data
-        
-        myRootRef.createUser(userEmail, password: userPassword,
-            withValueCompletionBlock: { error, result in
-                
+        if (userEmail != "" && userPassword != "" && userName != "") {
+            
+            DataService.dataService.BASE_REF.createUser(userEmail, password: userPassword, withValueCompletionBlock: { (error, result) -> Void in
                 if error != nil {
-                    // There was an error creating the account
-                } else {
-                    let uid = result["uid"] as? String
-                    print("Successfully created user account with uid: \(uid)")
+                    self.signupErrorAlert("Oops!", message: "Having trouble creating your account. Try again")
+                }else {
+                    DataService.dataService.BASE_REF.authUser(userEmail, password: userPassword, withCompletionBlock: { (error, authData) -> Void in
+                        let user = ["provider": authData.provider!, "email": userEmail!]
+                        DataService.dataService.createNewAccount(authData.uid, user: user)
+                    })
+                    
+                    NSUserDefaults.standardUserDefaults().setValue(result["uid"], forKey: "uid")
+                    
+                    self.performSegueWithIdentifier("BackToLogin", sender: nil)
                 }
-        })
-        // display alert message with confirmation
-        var myAlert = UIAlertController(title: "Alert", message: "Registration is successful, thank you!", preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default){ action in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }else {
+            signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
+            
         }
     }
     
-    func displayMyAlertMessage(userMessage: String) {
-        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil)
+    func signupErrorAlert(title: String, message: String) {
         
-        myAlert.addAction(okAction)
+        // Called upon signup error to let the user know signup didn't work.
         
-        self.presentViewController(myAlert, animated:true, completion: nil)
-        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
+
+    @IBAction func cancelCreateAccount(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
+    
+//    func displayMyAlertMessage(userMessage: String) {
+//        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+//        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil)
+//        
+//        myAlert.addAction(okAction)
+//        
+//        self.presentViewController(myAlert, animated:true, completion: nil)
+//        
+//    }
 
     
 
