@@ -10,62 +10,42 @@ import UIKit
 import MapKit
 import Photos
 import CoreLocation
-import Firebase
-
-let reuseIdentifier = "PhotoCell"
-let albulmName = "App Folder1"
-var location = CLLocation()
-var picLocation: PHAsset = PHAsset()
-
-
 
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    var photos: NSMutableArray = []
     
-    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
     
-
-    let imageArray = [UIImage(named: "uni1"), UIImage(named: "uni2"), UIImage(named: "uni3"), UIImage(named: "uni4"), UIImage(named: "uni5")]
-
     
     override func viewDidAppear(animated: Bool) {
-//        // 1
-//        let nav = self.navigationController?.navigationBar
-//        // 2
-//        nav?.barStyle = UIBarStyle.Black
-//        nav?.tintColor = UIColor.yellowColor()
-//        // 3
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        imageView.contentMode = .ScaleAspectFit
-//        // 4
-//        let image = UIImage(named: "home")
-//        imageView.image = image
-//        // 5
-//        navigationItem.titleView = imageView
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.collectionViewCell.reloadData()
+        
     }
-
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
+        let cell: CCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! CCollectionViewCell
+        print(photos.count)
+        if photos.count > 0 {
+            cell.imageView.image = photos [indexPath.row] as! UIImage
+            
+        }
         
         return cell
+        
     }
-
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return photos.count
     }
-    
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-//        var metadata: [NSObject : AnyObject] = info[UIImagePickerControllerMediaMetadata]
-//    }
     
     
     @IBAction func onTapTakePicture(sender: UIBarButtonItem) {
@@ -92,35 +72,27 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let picker : UIImagePickerController = UIImagePickerController()
         picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        
         picker.delegate = self
         picker.allowsEditing = false
-    
+        
         self.presentViewController(picker, animated: true, completion: nil)
         
     }
     
-
-    @IBAction func save(sender: AnyObject) {
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
-        if error == nil {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(ac, animated: true, completion: nil)
-        } else {
-            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(ac, animated: true, completion: nil)
-        }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        print (image)
+        photos.addObject(image)
+        self.collectionViewCell.reloadData()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let dvc = segue.destinationViewController as! CollectionViewController
-//        dvc.title = 
-//    }
-
 }
+
+
