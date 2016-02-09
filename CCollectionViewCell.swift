@@ -10,5 +10,23 @@ import UIKit
 
 class CCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var numberOfComments: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var numberOfLikes: UILabel!
+    
+    
+    var likeButton()
+
+    
+    
+    
+    
+    
 }
+
+
+
+
+
