@@ -17,7 +17,6 @@ class CCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var numberOfLikes: UILabel!
     
     
-    var likeButton()
 
     
     

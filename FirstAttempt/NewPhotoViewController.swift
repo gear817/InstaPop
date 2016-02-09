@@ -22,6 +22,8 @@ class NewPhotoViewController: UIViewController {
     }
     
 
+    @IBAction func usernameButton(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
