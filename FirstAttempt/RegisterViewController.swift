@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rain")!)
+        self.displayAlert()
     }
 
 
@@ -64,7 +65,14 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
+    func displayAlert() -> Void {
+        let alert = UIAlertController(title: "Hello!", message: "We need a few details in order to setup your account!", preferredStyle: UIAlertControllerStyle.Alert)
+        let ok = UIAlertAction(title: "Cool Beans!", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+
     
 //    func displayMyAlertMessage(userMessage: String) {
 //        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)

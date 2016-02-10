@@ -14,8 +14,24 @@ class ResetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rain")!)
+//        let alert = UIAlertController(title: "Hello!", message: "You are expected to enter an email in order for us to process your request!", preferredStyle: UIAlertControllerStyle.Alert)
+//        let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+//        alert.addAction(ok)
+        self.displayAlert()
     }
+    
+    
+    func displayAlert() -> Void {
+        let alert = UIAlertController(title: "Hello!", message: "You are expected to enter an email in order for us to process your request!", preferredStyle: UIAlertControllerStyle.Alert)
+        let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
 
+    }
+    
+    
+    
+    
 
     @IBAction func onResetTapped(sender: AnyObject) {
         let email = emaiTextField.text
