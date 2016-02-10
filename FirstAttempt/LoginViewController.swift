@@ -53,6 +53,9 @@ class LoginViewController: UIViewController {
     
     
     
+    @IBAction func onResetButtonTapped(sender: AnyObject) {
+        
+    }
     
     
     
