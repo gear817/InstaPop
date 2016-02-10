@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
                     self.signupErrorAlert("Oops!", message: "Having trouble creating your account. Try again")
                 }else {
                     DataService.dataService.BASE_REF.authUser(userEmail, password: userPassword, withCompletionBlock: { (error, authData) -> Void in
-                        let user = ["provider": authData.provider!, "email": userEmail!]
+                        let user = ["password": authData.provider!, "email": userEmail!, "userName": userName!]
                         DataService.dataService.createNewAccount(authData.uid, user: user)
                     })
                     
