@@ -99,9 +99,9 @@
 		303A27B91C64060600CDF107 /* FirstAttempt */ = {
 			isa = PBXGroup;
 			children = (
+				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				30BBABD61C69A1A3009518E0 /* Constants.swift */,
 				30BBABD81C69A26B009518E0 /* DataService.swift */,
-				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
 				30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */,
 				303A28001C691E2E00CDF107 /* RegisterViewController.swift */,
