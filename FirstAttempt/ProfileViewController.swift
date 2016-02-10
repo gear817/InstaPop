@@ -8,11 +8,13 @@
 
 import UIKit
 
+
+ var currentUserPhotosArray: NSMutableArray = []
+
 class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     

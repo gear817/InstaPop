@@ -15,6 +15,8 @@ import CoreLocation
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var photos: NSMutableArray = []
+    var currentUserPhotosMutableArray: NSMutableArray = []
+
     
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
@@ -89,6 +91,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         print (image)
         photos.addObject(image)
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let currentPhotosArray = userDefaults.objectForKey("userPhotos")
+        
+        currentUserPhotosMutableArray.addObject(image)
+        userDefaults.setObject(currentUserPhotosArray, forKey: "userPhotos")
         self.collectionViewCell.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
