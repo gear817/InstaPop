@@ -10,6 +10,8 @@ import UIKit
 
 class NewPhotoViewController: UIViewController {
 
+    var photo: NewPost!
+    
     @IBOutlet weak var commentTextView: UITextView!
     
     @IBOutlet weak var photoImageView: UIImageView!
@@ -19,7 +21,9 @@ class NewPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        photoImageView.image = UIImage(data: photo.photoPhoto)
+        
+        
     }
 
 

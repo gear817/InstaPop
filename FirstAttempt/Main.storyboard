@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XWI-wt-dQx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XWI-wt-dQx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofq-bd-bye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="772"/>
+            <point key="canvasLocation" x="1935" y="802"/>
         </scene>
         <!--Activity Feed-->
         <scene sceneID="4KS-ym-P8S">
@@ -298,7 +298,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="comments" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-Me-8qz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="comments" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-Me-8qz">
                                                     <rect key="frame" x="22" y="321" width="190" height="76"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -307,14 +307,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-zR-Tj7">
+                                                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="23" placeholderIntrinsicHeight="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-zR-Tj7">
                                                     <rect key="frame" x="259" y="330" width="23" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="mcS-cq-66P"/>
                                                     </constraints>
                                                     <state key="normal" image="likeicon"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pV-wf-rzH">
+                                                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pV-wf-rzH">
                                                     <rect key="frame" x="228" y="325" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="bK4-D8-I7n"/>
@@ -342,7 +342,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="09R-gQ-BES" id="exg-0F-j3u"/>
-                                            <segue destination="yP1-Hh-yS3" kind="show" id="7W9-rg-9U3"/>
+                                            <segue destination="yP1-Hh-yS3" kind="show" identifier="NewPhotoSegue" id="7W9-rg-9U3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -391,7 +391,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="5cy-Xc-Bdg">
                             <connections>
-                                <segue destination="5Wz-oy-xdD" kind="show" identifier="ToProfile" id="0k2-Ib-BHE"/>
+                                <segue destination="5Wz-oy-xdD" kind="show" identifier="NewPhotoSeque" id="0k2-Ib-BHE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -485,14 +485,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="followButton" destination="IoP-we-Ydd" id="dw9-EM-5y7"/>
                         <outlet property="tableView" destination="cFB-dH-qLq" id="PB8-7w-ulT"/>
                         <outlet property="usernameLabel" destination="SCK-3H-Z4Q" id="TgK-Ge-eNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eN-0i-2PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3390" y="885"/>
+            <point key="canvasLocation" x="3390" y="802"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="XOq-aL-M9c">
@@ -549,7 +548,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uni1" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
                                 <rect key="frame" x="32" y="175" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="00w-5O-Sed"/>
@@ -652,7 +651,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60z-oE-ABj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4165" y="876"/>
+            <point key="canvasLocation" x="4125" y="802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zop-zA-6hT">
@@ -698,16 +697,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUe-pq-gtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692" y="730"/>
+            <point key="canvasLocation" x="2695" y="802"/>
         </scene>
     </scenes>
     <resources>
         <image name="chatbubble" width="204" height="204"/>
         <image name="likeicon" width="231" height="218"/>
-        <image name="uni1" width="608" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JWM-Se-QLt"/>
-        <segue reference="0k2-Ib-BHE"/>
+        <segue reference="iul-uR-n2r"/>
+        <segue reference="Q20-ec-yO6"/>
     </inferredMetricsTieBreakers>
 </document>

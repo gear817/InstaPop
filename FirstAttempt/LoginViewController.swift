@@ -58,13 +58,6 @@ class LoginViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     func loginErrorAlert(title: String, message: String) {
         // called upon login error to let the user know login didn't work
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
