@@ -8,8 +8,15 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +24,8 @@ class ProfileViewController: UIViewController {
 
     
     
+    @IBAction func onFollowButtonTapped(sender: AnyObject) {
+    }
     
     
     @IBAction func onSignOutTapped(sender: AnyObject) {
@@ -31,12 +40,18 @@ class ProfileViewController: UIViewController {
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewcontroller
         
     }
-    
-    
-    
-    
-    
+  
 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
+        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+        
+    }
     /*
     // MARK: - Navigation
 
