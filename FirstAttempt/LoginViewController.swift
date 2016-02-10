@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  FirstAttempt
 //
-//  Created by Danny Vasquez on 2/8/16.
+//  Created by Danny Vasquez and Joseph Mouer on 2/8/16.
 //  Copyright © 2016 Danny Vasquez. All rights reserved.
 //
 
