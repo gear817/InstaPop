@@ -233,8 +233,8 @@
                     </view>
                     <connections>
                         <outlet property="repeatPasswordTextField" destination="S4e-BE-YRY" id="ift-up-Q3Q"/>
-                        <outlet property="userEmailTextField" destination="gBG-AZ-n3z" id="Qpp-9j-uDy"/>
-                        <outlet property="userNameTextfield" destination="gBG-AZ-n3z" id="pFO-sj-JwO"/>
+                        <outlet property="userEmailTextField" destination="gBG-AZ-n3z" id="QKE-cY-vpF"/>
+                        <outlet property="userNameTextfield" destination="F76-P2-D9U" id="JXi-TU-pwR"/>
                         <outlet property="userPasswordTextField" destination="oZ7-4Q-Mwf" id="vz7-14-4nL"/>
                     </connections>
                 </viewController>
@@ -254,7 +254,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e6u-fI-RVe">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e6u-fI-RVe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ptt-ah-tiw">
                                     <size key="itemSize" width="292" height="175"/>
@@ -264,7 +264,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="qGh-Ix-J2Q" customClass="CCollectionViewCell" customModule="FirstAttempt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="292" height="175"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="292" height="175"/>
@@ -428,7 +428,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-ss-eok">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-ss-eok">
                                 <rect key="frame" x="0.0" y="64" width="412" height="246"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="412" id="b54-20-ge7"/>
