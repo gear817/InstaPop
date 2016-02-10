@@ -549,35 +549,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uni1" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uni1" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
                                 <rect key="frame" x="32" y="175" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="00w-5O-Sed"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-qS-dYl">
                                 <rect key="frame" x="255" y="28" width="91" height="30"/>
                                 <state key="normal" title="User"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Caption (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Caption (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
                                 <rect key="frame" x="321" y="175" width="201" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="U5n-cv-bOf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-9N-0XI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-9N-0XI">
                                 <rect key="frame" x="235" y="89" width="131" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="N1R-RI-4Jf"/>
+                                </constraints>
                                 <state key="normal" title="username"/>
                                 <connections>
                                     <action selector="onUsernameTapped:" destination="yP1-Hh-yS3" eventType="touchUpInside" id="gPL-HA-1Cv"/>
                                     <segue destination="5Wz-oy-xdD" kind="show" id="Rey-L7-d0h"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
                                 <rect key="frame" x="301" y="204" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Vad-8s-lHj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="N1u-dg-cVx" secondAttribute="trailing" constant="39" id="08d-2v-frj"/>
+                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="top" secondItem="Kcr-9N-0XI" secondAttribute="bottom" constant="56" id="3yA-nd-Hin"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vpa-hh-S3j" secondAttribute="trailing" constant="58" id="4cZ-Rj-lCI"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="19" id="7ZX-It-zCj"/>
+                            <constraint firstItem="Kcr-9N-0XI" firstAttribute="top" secondItem="DxH-v7-wXX" secondAttribute="bottom" constant="25" id="LQJ-Ck-H3T"/>
+                            <constraint firstItem="WMp-zf-xP2" firstAttribute="top" secondItem="Kcr-9N-0XI" secondAttribute="bottom" constant="56" id="Y2B-jE-A3y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kcr-9N-0XI" secondAttribute="trailing" constant="214" id="ZAF-tk-gs9"/>
+                            <constraint firstItem="Kcr-9N-0XI" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="215" id="mSo-sS-7hH"/>
+                            <constraint firstItem="WMp-zf-xP2" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="12" id="o7q-hd-IaD"/>
+                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="39" id="q44-CE-I7t"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="19" id="vkQ-7K-SSY"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="Vpa-hh-S3j" secondAttribute="bottom" constant="8" id="yrX-zs-xYz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f39-a1-och">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="fjg-qk-aFS"/>
