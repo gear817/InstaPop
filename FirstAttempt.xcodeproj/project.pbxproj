@@ -19,6 +19,7 @@
 		303A27DD1C646DDF00CDF107 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303A27DC1C646DDF00CDF107 /* MapKit.framework */; };
 		303A28011C691E2E00CDF107 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A28001C691E2E00CDF107 /* RegisterViewController.swift */; };
 		30BAD31E1C6A53E8008623EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAD31D1C6A53E8008623EE /* Main.storyboard */; };
+		30BAD3201C6BC9C5008623EE /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BAD31F1C6BC9C5008623EE /* ResetViewController.swift */; };
 		30BBABD71C69A1A3009518E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBABD61C69A1A3009518E0 /* Constants.swift */; };
 		30BBABD91C69A26B009518E0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBABD81C69A26B009518E0 /* DataService.swift */; };
 		30BBABDB1C69A5AD009518E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */; };
@@ -44,6 +45,7 @@
 		303A27DC1C646DDF00CDF107 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		303A28001C691E2E00CDF107 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		30BAD31D1C6A53E8008623EE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		30BAD31F1C6BC9C5008623EE /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		30BBABD61C69A1A3009518E0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utility/Constants.swift; sourceTree = "<group>"; };
 		30BBABD81C69A26B009518E0 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = DataService/DataService.swift; sourceTree = "<group>"; };
 		30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				30BBABD81C69A26B009518E0 /* DataService.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
 				30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */,
+				30BAD31F1C6BC9C5008623EE /* ResetViewController.swift */,
 				303A28001C691E2E00CDF107 /* RegisterViewController.swift */,
 				303A27D01C641E9B00CDF107 /* CollectionViewController.swift */,
 				303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */,
@@ -268,6 +271,7 @@
 				303A27DB1C646D4B00CDF107 /* MapViewController.swift in Sources */,
 				30BBABD71C69A1A3009518E0 /* Constants.swift in Sources */,
 				30BBABD91C69A26B009518E0 /* DataService.swift in Sources */,
+				30BAD3201C6BC9C5008623EE /* ResetViewController.swift in Sources */,
 				30BBABDB1C69A5AD009518E0 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,10 +12,10 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rain")!)
     }
 
     
@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onResetButtonTapped(sender: AnyObject) {
+    
         
     }
     
