@@ -14,11 +14,27 @@ class ResetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rain")!)
+        self.displayAlert()
+
 //        let alert = UIAlertController(title: "Hello!", message: "You are expected to enter an email in order for us to process your request!", preferredStyle: UIAlertControllerStyle.Alert)
 //        let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
 //        alert.addAction(ok)
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
         self.displayAlert()
     }
+    
+    
+    @IBAction func onCancelTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    
+    
+    
+    
     
     
     func displayAlert() -> Void {
