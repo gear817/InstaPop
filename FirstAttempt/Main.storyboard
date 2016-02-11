@@ -37,7 +37,7 @@
                                 <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="InstaSpam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-y9-3kF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InstaSpam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-y9-3kF">
                                 <rect key="frame" x="208" y="72" width="184" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="GtZ-Oy-X5w"/>
@@ -264,7 +264,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="qGh-Ix-J2Q" customClass="CCollectionViewCell" customModule="FirstAttempt" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="qGh-Ix-J2Q" customClass="PostCollectionViewCell" customModule="FirstAttempt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="292" height="439"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -407,7 +407,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionViewCell" destination="e6u-fI-RVe" id="SyF-u2-vA9"/>
+                        <outlet property="collectionView" destination="e6u-fI-RVe" id="cNx-sb-hw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-wE-Q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,7 +716,7 @@
         <image name="likeicon" width="231" height="218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iul-uR-n2r"/>
         <segue reference="Q20-ec-yO6"/>
+        <segue reference="0k2-Ib-BHE"/>
     </inferredMetricsTieBreakers>
 </document>

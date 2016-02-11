@@ -7,27 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
-class NewPost{
+class Post {
     
-    let photoString: String
-    let aboutPhoto: String
-    let photoPoster: String
-    let photoPhoto: NSData
+    var photoString: String?
+    var aboutPhoto: String?
+    var photoPoster: String?
+    var photoPhoto: NSData?
     
+    var image: UIImage?
     
-    init (photoDictionary: [String:AnyObject])
-    {
-        photoString = photoDictionary["photos"] as! String
-        aboutPhoto = photoDictionary["about"] as! String
-        photoPoster = photoDictionary["users"] as! String  //THIS NEEDS TO BE FIXED
+    func setupWithDictionary(photoDictionary photoDictionary: NSDictionary) {
+        self.photoString = photoDictionary["photos"] as? String
+        self.aboutPhoto = photoDictionary["about"] as? String
+        self.photoPoster = photoDictionary["users"] as? String  //THIS NEEDS TO BE FIXED
         
-        
-        photoPhoto = NSData(base64EncodedString: photoString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
-        
+        self.photoPhoto = NSData(base64EncodedString: photoString!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
     }
-    
-    
-    
-    
 }
