@@ -8,14 +8,35 @@
 
 import UIKit
 
+
+
 class PostCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var numberOfComments: UILabel!
+
+    
+    @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var comments: UILabel!
-    @IBOutlet weak var numberOfLikes: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+//    @IBOutlet weak var likeButton: UIButton! {
+//        init (normal: UIButton){
+//        // initialize the likes button to reflect the current state
+//        self.likeButton.selected = self.likes
+//        
+//        // set the images per state
+//        self.likeButton.setImage(UIImage(named: "emptyheart"), forState: .Normal)
+//        self.likeButton.setImage(UIImage(named: "fullheart"), forState: .Selected)
+//
+//    }
+    
+    
+    
+    
+    
+
 }
+
 
 
 

@@ -15,6 +15,7 @@ class NewPhotoViewController: UIViewController {
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var usernameButton: UIButton!
+    
     var ref = Firebase (url: BASE_URL + "/photos")
     
     var post: Post!
