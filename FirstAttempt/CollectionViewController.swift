@@ -19,21 +19,23 @@ class CollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: Properties
     
     var postPhotos = [Post]()
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
     var ref = Firebase(url: BASE_URL + "/photos")
+    var isSearchActive: Bool = false
     var commentTextField = UITextField()
     var commentsArray: NSMutableArray = []
-
+          
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         self.collectionView.reloadData()
         
     }
@@ -75,17 +77,19 @@ class CollectionViewController: UIViewController {
     @IBAction func onCommentTapped(sender: AnyObject) {
         let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-            print("Ok Button Pressed")
-            self.commentsArray.addObject(self.commentTextField)
+            //            let commentString = "\(self.commentTextField.text!) by User at Time"
+            self.commentsArray.addObject(self.commentTextField.text!)
+            self.collectionView.reloadData()
+            
+            
             print(self.commentsArray)
-
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-            print("Cancel Button Pressed")
         }
         alertController.addAction(ok)
         alertController.addAction(cancel)
-    
+        
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             self.commentTextField = textField
             self.commentTextField.placeholder = "Enter comment"
@@ -93,6 +97,20 @@ class CollectionViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func onLikeButtonTapped(sender: UIButton) {
+        print(sender.tag)
+        //toggle
+//        self.likes = self.likeButton.selected
+//        self.likeButton.selected = self.likes
+        
+            }
+    
+    
+    
+    
+    
+    
     // MARK: - Helpers
     
     @IBAction func onTapTakePicture(sender: UIBarButtonItem) {
@@ -120,6 +138,7 @@ class CollectionViewController: UIViewController {
     }
     
     
+    
     // MARK: - UIImagePickeControllerDelegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
@@ -138,8 +157,8 @@ class CollectionViewController: UIViewController {
         self.collectionView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }
-
 
 // MARK: - UINavigationControllerDelegate, UIImagePickerControllerDelegate
 
@@ -150,7 +169,8 @@ extension CollectionViewController: UINavigationControllerDelegate, UIImagePicke
 // MARK: - UICollectionViewDataSource
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: PostCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! PostCollectionViewCell
@@ -161,13 +181,23 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         }
         
         if commentsArray.count > 0 {
-        cell.commentTextView.text = (commentsArray [indexPath.row] as! String)
-        
+            cell.commentTextView.text = (commentsArray [indexPath.row] as! String)
         }
+        
+        
+        
         return cell
+        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
+    
 }
+//MARK: - Search
+
+
+
+
+

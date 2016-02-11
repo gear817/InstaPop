@@ -19,9 +19,20 @@ class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
+//    @IBOutlet weak var likeButton: UIButton! {
+//        init (normal: UIButton){
+//        // initialize the likes button to reflect the current state
+//        self.likeButton.selected = self.likes
+//        
+//        // set the images per state
+//        self.likeButton.setImage(UIImage(named: "emptyheart"), forState: .Normal)
+//        self.likeButton.setImage(UIImage(named: "fullheart"), forState: .Selected)
+//
+//    }
     
-    @IBAction func onLikeTapped(sender: UIButton) {
-    }
+    
+    
+    
     
 
 }
