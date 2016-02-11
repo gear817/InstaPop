@@ -11,6 +11,8 @@ import Firebase
 
 class NewPhotoViewController: UIViewController {
 
+     // MARK: IBOutlets
+    
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -19,12 +21,18 @@ class NewPhotoViewController: UIViewController {
     
     var post: Post!
     
+    
+    // MARK: Lifecycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         shareButton.enabled = true
         self.photoImageView.image = self.post.image
     }
 
+    
+    // MARK: IBActions
+    
     @IBAction func onTapShare(sender: AnyObject) {
         uploadPhoto()
         self.photoImageView.image = self.post.image
@@ -32,6 +40,10 @@ class NewPhotoViewController: UIViewController {
         shareButton.enabled = true
     }
 
+    
+    // MARK: Helperfunctions
+    
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
         photoImageView.image = chosenImage

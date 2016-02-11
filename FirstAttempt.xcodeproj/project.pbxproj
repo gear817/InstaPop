@@ -24,6 +24,8 @@
 		30BBABDB1C69A5AD009518E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */; };
 		8DBE460C1C184E202C55B63E /* Pods_FirstAttempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F553548B11E321472D37336 /* Pods_FirstAttempt.framework */; };
 		DF1EFE7F1C692C18001FD3AB /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1EFE7E1C692C18001FD3AB /* Photos.framework */; };
+		DF25BA7F1C6D11CE00865B1B /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25BA7E1C6D11CE00865B1B /* UserTableViewController.swift */; };
+		DF25BA811C6D195000865B1B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25BA801C6D195000865B1B /* Users.swift */; };
 		DF84990F1C6BCB4800451B3C /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF84990E1C6BCB4800451B3C /* NewPost.swift */; };
 		DFC015571C67BA7C00414CDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015561C67BA7C00414CDE /* CoreLocation.framework */; };
 		DFC015591C67BA9700414CDE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015581C67BA9700414CDE /* Contacts.framework */; };
@@ -52,6 +54,8 @@
 		C80E3B30739E7F878961EB6E /* Pods-FirstAttempt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.debug.xcconfig"; sourceTree = "<group>"; };
 		D91FB430FA6B3F3B8147289D /* Pods-FirstAttempt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.release.xcconfig"; sourceTree = "<group>"; };
 		DF1EFE7E1C692C18001FD3AB /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		DF25BA7E1C6D11CE00865B1B /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		DF25BA801C6D195000865B1B /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		DF84990E1C6BCB4800451B3C /* NewPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		DFC015561C67BA7C00414CDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DFC015581C67BA9700414CDE /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -104,6 +108,7 @@
 				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				DF84990E1C6BCB4800451B3C /* NewPost.swift */,
 				30BBABD61C69A1A3009518E0 /* Constants.swift */,
+				DF25BA801C6D195000865B1B /* Users.swift */,
 				30BBABD81C69A26B009518E0 /* DataService.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
 				30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */,
@@ -112,6 +117,7 @@
 				303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */,
 				303A27D61C6468D600CDF107 /* NewPhotoViewController.swift */,
 				303A27DA1C646D4B00CDF107 /* MapViewController.swift */,
+				DF25BA7E1C6D11CE00865B1B /* UserTableViewController.swift */,
 				303A27D81C6468F100CDF107 /* ProfileViewController.swift */,
 				30BAD31D1C6A53E8008623EE /* Main.storyboard */,
 				303A27C11C64060600CDF107 /* Assets.xcassets */,
@@ -263,9 +269,11 @@
 			files = (
 				303A27D91C6468F100CDF107 /* ProfileViewController.swift in Sources */,
 				303A27D11C641E9B00CDF107 /* CollectionViewController.swift in Sources */,
+				DF25BA7F1C6D11CE00865B1B /* UserTableViewController.swift in Sources */,
 				303A27BD1C64060600CDF107 /* ViewController.swift in Sources */,
 				303A28011C691E2E00CDF107 /* RegisterViewController.swift in Sources */,
 				DF84990F1C6BCB4800451B3C /* NewPost.swift in Sources */,
+				DF25BA811C6D195000865B1B /* Users.swift in Sources */,
 				303A27D51C644EB100CDF107 /* CCollectionViewCell.swift in Sources */,
 				303A27D71C6468D600CDF107 /* NewPhotoViewController.swift in Sources */,
 				303A27BB1C64060600CDF107 /* AppDelegate.swift in Sources */,
