@@ -24,7 +24,7 @@ class CollectionViewController: UIViewController {
     var postPhotos = [Post]()
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
-    var ref = Firebase(url: BASE_URL + "/photos")
+   
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -32,35 +32,6 @@ class CollectionViewController: UIViewController {
         
         self.collectionView.reloadData()
         
-//        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-//            //self.performSegueWithIdentifier("LoginSegue", sender: nil)
-//        } else {
-//            //    self.performSegueWithIdentifier("ToProfile", sender: nil)
-//        }
-//        
-//        let ref = Firebase(url: BASE_URL + "/photos")
-//        
-//        ref.observeEventType(.Value, withBlock: { snapshot in
-//            
-//            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-//                
-//                self.photos = []
-//                
-//                for snap in snapshots {
-//                    
-//                    let photoDictionary = snap.value as? Dictionary<String, AnyObject>
-//                    let newPost = Post()
-//                    
-//                    newPost.setupWithDictionary(photoDictionary: photoDictionary!)
-//                    
-//                    self.postPhotos.append(newPost)
-//                }
-//                
-//                self.collectionView.reloadData()
-//            }
-//            }, withCancelBlock: { error in
-//                print(error.description)
-//        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -141,10 +112,6 @@ class CollectionViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
-
-    // Mark: Firebase Upload
-
-
 
 // MARK: - UINavigationControllerDelegate, UIImagePickerControllerDelegate
 

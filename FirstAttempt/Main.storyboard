@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XWI-wt-dQx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XWI-wt-dQx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -594,6 +594,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YVN-aF-Lvk">
                                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <state key="normal" title="Share"/>
                                                 <connections>
                                                     <action selector="onTapShare:" destination="yP1-Hh-yS3" eventType="touchUpInside" id="5tc-V5-nKK"/>
@@ -603,10 +604,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter Caption (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
-                                <rect key="frame" x="212" y="380" width="201" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter Caption Below: (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
+                                <rect key="frame" x="182" y="385" width="237" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="U5n-cv-bOf"/>
+                                    <constraint firstAttribute="width" constant="237" id="U5n-cv-bOf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -615,14 +616,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vpa-hh-S3j" secondAttribute="trailing" constant="167" id="4cZ-Rj-lCI"/>
-                            <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="Vpa-hh-S3j" secondAttribute="bottom" constant="8" id="ICZ-4q-XXu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vpa-hh-S3j" secondAttribute="trailing" constant="161" id="4cZ-Rj-lCI"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="Vpa-hh-S3j" secondAttribute="bottom" constant="3" id="ICZ-4q-XXu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="elC-p6-Dns" secondAttribute="trailing" constant="-20" id="MOY-lb-1Lz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="elC-p6-Dns" secondAttribute="bottom" constant="-5" id="QdW-98-WpU"/>
                             <constraint firstItem="N1u-dg-cVx" firstAttribute="centerX" secondItem="ESa-aR-U4N" secondAttribute="centerX" id="bCg-C6-5MN"/>
                             <constraint firstItem="elC-p6-Dns" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="-20" id="ngs-Ks-tL7"/>
                             <constraint firstItem="WMp-zf-xP2" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="155" id="o7q-hd-IaD"/>
-                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="-213" id="q44-CE-I7t"/>
+                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="-243" id="q44-CE-I7t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f39-a1-och">
@@ -631,6 +632,7 @@
                     <connections>
                         <outlet property="commentTextView" destination="N1u-dg-cVx" id="iCP-UZ-s8z"/>
                         <outlet property="photoImageView" destination="WMp-zf-xP2" id="THx-bp-40y"/>
+                        <outlet property="shareButton" destination="Q3i-Bc-hSp" id="lKD-h2-XNJ"/>
                         <outlet property="usernameButton" destination="Kcr-9N-0XI" id="hzp-48-8ef"/>
                     </connections>
                 </viewController>
@@ -726,7 +728,7 @@
         <image name="likeicon" width="231" height="218"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Rey-L7-d0h"/>
         <segue reference="Q20-ec-yO6"/>
-        <segue reference="0k2-Ib-BHE"/>
     </inferredMetricsTieBreakers>
 </document>
