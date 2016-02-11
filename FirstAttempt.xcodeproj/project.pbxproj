@@ -24,6 +24,7 @@
 		30BBABDB1C69A5AD009518E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */; };
 		8DBE460C1C184E202C55B63E /* Pods_FirstAttempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F553548B11E321472D37336 /* Pods_FirstAttempt.framework */; };
 		DF1EFE7F1C692C18001FD3AB /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1EFE7E1C692C18001FD3AB /* Photos.framework */; };
+		DF84990F1C6BCB4800451B3C /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF84990E1C6BCB4800451B3C /* NewPost.swift */; };
 		DFC015571C67BA7C00414CDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015561C67BA7C00414CDE /* CoreLocation.framework */; };
 		DFC015591C67BA9700414CDE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC015581C67BA9700414CDE /* Contacts.framework */; };
 		DFC0155B1C67BAB400414CDE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0155A1C67BAB400414CDE /* CloudKit.framework */; };
@@ -51,6 +52,7 @@
 		C80E3B30739E7F878961EB6E /* Pods-FirstAttempt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.debug.xcconfig"; sourceTree = "<group>"; };
 		D91FB430FA6B3F3B8147289D /* Pods-FirstAttempt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstAttempt.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstAttempt/Pods-FirstAttempt.release.xcconfig"; sourceTree = "<group>"; };
 		DF1EFE7E1C692C18001FD3AB /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		DF84990E1C6BCB4800451B3C /* NewPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		DFC015561C67BA7C00414CDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DFC015581C67BA9700414CDE /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		DFC0155A1C67BAB400414CDE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
+				DF84990E1C6BCB4800451B3C /* NewPost.swift */,
 				30BBABD61C69A1A3009518E0 /* Constants.swift */,
 				30BBABD81C69A26B009518E0 /* DataService.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
@@ -170,7 +173,7 @@
 				TargetAttributes = {
 					303A27B61C64060600CDF107 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 4Y33MV45NS;
+						DevelopmentTeam = SEJAGQADS3;
 					};
 				};
 			};
@@ -262,6 +265,7 @@
 				303A27D11C641E9B00CDF107 /* CollectionViewController.swift in Sources */,
 				303A27BD1C64060600CDF107 /* ViewController.swift in Sources */,
 				303A28011C691E2E00CDF107 /* RegisterViewController.swift in Sources */,
+				DF84990F1C6BCB4800451B3C /* NewPost.swift in Sources */,
 				303A27D51C644EB100CDF107 /* CCollectionViewCell.swift in Sources */,
 				303A27D71C6468D600CDF107 /* NewPhotoViewController.swift in Sources */,
 				303A27BB1C64060600CDF107 /* AppDelegate.swift in Sources */,

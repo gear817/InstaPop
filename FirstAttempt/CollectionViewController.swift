@@ -2,20 +2,24 @@
 //  CollectionViewController.swift
 //  FirstAttempt
 //
-//  Created by Danny Vasquez on 2/4/16.
-//  Copyright © 2016 Danny Vasquez. All rights reserved.
+//  Created by Danny Vasquez and Joseph Mouer on 2/4/16.
+//  Copyright © 2016 Danny Vasquez and Joseph Mouer. All rights reserved.
 //
 
 import UIKit
 import MapKit
 import Photos
 import CoreLocation
+import Firebase
+
 
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    var postPhotos = [NewPost]()
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
+
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
     
@@ -26,6 +30,37 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionViewCell.reloadData()
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+            //self.performSegueWithIdentifier("LoginSegue", sender: nil)
+        }
+        else
+        {
+            //    self.performSegueWithIdentifier("ToProfile", sender: nil)
+        }
+        
+        let ref = Firebase(url: BASE_URL + "/photos")
+        
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                self.photos = []
+                
+                for snap in snapshots {
+                    let photoDictionary = snap.value as? Dictionary<String, AnyObject>
+                    
+                    let newPhoto = NewPost(photoDictionary: photoDictionary!)
+                    
+                    self.postPhotos.append(newPhoto)
+                }
+                self.collectionViewCell.reloadData()
+                
+            }
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
         
     }
     
@@ -80,6 +115,22 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "NewPhotoSegue"
+        {
+            let dvc = segue.destinationViewController as! NewPhotoViewController
+            
+            let cell = sender as! UICollectionViewCell
+            
+            let indexPath = self.collectionViewCell!.indexPathForCell(cell)
+            
+            dvc.photo = photos [(indexPath?.row)!] as! NewPost
+            
+            
+        }
+        
+    }
+
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -99,5 +150,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
 }
+
 
 
