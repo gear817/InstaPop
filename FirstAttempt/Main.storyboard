@@ -314,6 +314,9 @@
                                                         <constraint firstAttribute="height" constant="22" id="DoD-Dg-YNr"/>
                                                     </constraints>
                                                     <state key="normal" image="likeicon"/>
+                                                    <connections>
+                                                        <action selector="onLikeTapped:" destination="qGh-Ix-J2Q" eventType="touchUpInside" id="cIR-fo-nUM"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pV-wf-rzH">
                                                     <rect key="frame" x="228" y="325" width="30" height="30"/>
@@ -322,6 +325,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="ctY-HQ-cMm"/>
                                                     </constraints>
                                                     <state key="normal" image="chatbubble"/>
+                                                    <connections>
+                                                        <action selector="onCommentTapped:" destination="AdR-kD-Ydf" eventType="touchUpInside" id="59U-rc-s7k"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -342,7 +348,10 @@
                                             <constraint firstItem="Sk2-Mj-1Eq" firstAttribute="top" secondItem="09R-gQ-BES" secondAttribute="bottom" constant="4" id="mxv-lT-Ef2"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="captionLabel" destination="Sk2-Mj-1Eq" id="KT9-pn-nxc"/>
+                                            <outlet property="commentTextView" destination="qPd-Me-8qz" id="W6E-y2-dSD"/>
                                             <outlet property="imageView" destination="09R-gQ-BES" id="exg-0F-j3u"/>
+                                            <outlet property="usernameLabel" destination="d2q-9n-HP1" id="icH-gN-3sh"/>
                                             <segue destination="yP1-Hh-yS3" kind="show" identifier="NewPhotoSegue" id="7W9-rg-9U3"/>
                                         </connections>
                                     </collectionViewCell>
@@ -372,21 +381,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="91d-cR-v8h">
-                                <rect key="frame" x="133" y="556" width="334" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="334" id="p29-f9-uAw"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hch-gF-nJL" firstAttribute="top" secondItem="91d-cR-v8h" secondAttribute="bottom" id="AH6-wJ-m3w"/>
                             <constraint firstItem="e6u-fI-RVe" firstAttribute="leading" secondItem="vKl-44-DRJ" secondAttribute="leadingMargin" constant="-20" id="FZo-9F-TFh"/>
-                            <constraint firstItem="91d-cR-v8h" firstAttribute="leading" secondItem="vKl-44-DRJ" secondAttribute="leadingMargin" constant="113" id="OiZ-vV-5cp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e6u-fI-RVe" secondAttribute="trailing" constant="-20" id="Pup-Yu-FOW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="91d-cR-v8h" secondAttribute="trailing" constant="113" id="SiB-A1-BcX"/>
                             <constraint firstItem="ksQ-w6-5rc" firstAttribute="leading" secondItem="vKl-44-DRJ" secondAttribute="leadingMargin" constant="-20" id="YnP-Iq-RmN"/>
                             <constraint firstItem="e6u-fI-RVe" firstAttribute="top" secondItem="D11-Jw-Kg3" secondAttribute="bottom" constant="-64" id="dZs-Nd-1BM"/>
                             <constraint firstItem="hch-gF-nJL" firstAttribute="top" secondItem="e6u-fI-RVe" secondAttribute="bottom" id="jue-G5-Jvh"/>
@@ -726,7 +725,7 @@
         <image name="likeicon" width="231" height="218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q20-ec-yO6"/>
         <segue reference="0k2-Ib-BHE"/>
+        <segue reference="Q20-ec-yO6"/>
     </inferredMetricsTieBreakers>
 </document>

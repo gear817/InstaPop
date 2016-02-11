@@ -8,14 +8,24 @@
 
 import UIKit
 
+
+
 class PostCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var numberOfComments: UILabel!
+
+    
+    @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var comments: UILabel!
-    @IBOutlet weak var numberOfLikes: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    
+    @IBAction func onLikeTapped(sender: UIButton) {
+    }
+    
+
 }
+
 
 
 

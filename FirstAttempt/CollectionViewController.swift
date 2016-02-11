@@ -12,6 +12,7 @@ import Photos
 import CoreLocation
 import Firebase
 
+
 class CollectionViewController: UIViewController {
     
     // MARK: IBOutlets
@@ -25,6 +26,11 @@ class CollectionViewController: UIViewController {
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
     var ref = Firebase(url: BASE_URL + "/photos")
+    var commentTextField = UITextField()
+    var commentsArray: NSMutableArray = []
+
+    
+  
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -95,6 +101,29 @@ class CollectionViewController: UIViewController {
         self.presentViewController(picker, animated: true, completion: nil)
     }
     
+    
+    
+    @IBAction func onCommentTapped(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            print("Ok Button Pressed")
+            self.commentsArray.addObject(self.commentTextField)
+            print(self.commentsArray)
+
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
+            print("Cancel Button Pressed")
+        }
+        alertController.addAction(ok)
+        alertController.addAction(cancel)
+    
+        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            self.commentTextField = textField
+            self.commentTextField.placeholder = "Enter comment"
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+    }
     // MARK: - Helpers
     
     @IBAction func onTapTakePicture(sender: UIBarButtonItem) {
@@ -121,6 +150,7 @@ class CollectionViewController: UIViewController {
         }
     }
     
+    
     // MARK: - UIImagePickeControllerDelegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
@@ -134,13 +164,13 @@ class CollectionViewController: UIViewController {
         
         self.photos.addObject(image)
         
-        
         self.currentUserPhotosMutableArray.addObject(image)
         userDefaults.setObject(currentUserPhotosArray, forKey: "userPhotos")
         self.collectionView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
+
 
     // Mark: Firebase Upload
 
@@ -155,15 +185,20 @@ extension CollectionViewController: UINavigationControllerDelegate, UIImagePicke
 // MARK: - UICollectionViewDataSource
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
+
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: PostCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! PostCollectionViewCell
         
+        
         if photos.count > 0 {
-            cell.imageView.image = photos [indexPath.row] as! UIImage
+            cell.imageView.image = (photos [indexPath.row] as! UIImage)
         }
         
+        if commentsArray.count > 0 {
+        cell.commentTextView.text = (commentsArray [indexPath.row] as! String)
+        
+        }
         return cell
     }
     
