@@ -10,35 +10,19 @@ import UIKit
 
 class NewPhotoViewController: UIViewController {
 
-    var photo: NewPost!
-    
     @IBOutlet weak var commentTextView: UITextView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
-    
     @IBOutlet weak var usernameButton: UIButton!
+    
+    var post: Post!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoImageView.image = UIImage(data: photo.photoPhoto)
-        
-        
+        self.photoImageView.image = self.post.image
     }
-
-
-    
 
     @IBAction func usernameButton(sender: AnyObject) {
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
