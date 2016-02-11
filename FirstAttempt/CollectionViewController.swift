@@ -31,7 +31,7 @@ class CollectionViewController: UIViewController {
         
         self.collectionView.reloadData()
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //self.performSegueWithIdentifier("LoginSegue", sender: nil)
         } else {
             //    self.performSegueWithIdentifier("ToProfile", sender: nil)

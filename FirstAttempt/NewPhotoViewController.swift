@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewPhotoViewController: UIViewController {
 
@@ -22,7 +23,15 @@ class NewPhotoViewController: UIViewController {
         self.photoImageView.image = self.post.image
     }
 
+    @IBAction func onTapShare(sender: AnyObject) {
+    
+    
+    
+    }
     @IBAction func usernameButton(sender: AnyObject) {
         
     }
+
+
+
 }
