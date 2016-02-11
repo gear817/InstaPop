@@ -12,14 +12,6 @@ import Photos
 import CoreLocation
 import Firebase
 
-
-
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    var postPhotos = [NewPost]()
-    var photos: NSMutableArray = []
-    var currentUserPhotosMutableArray: NSMutableArray = []
-
 class CollectionViewController: UIViewController {
     
     // MARK: IBOutlets
@@ -28,9 +20,6 @@ class CollectionViewController: UIViewController {
     
     // MARK: Properties
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
     var postPhotos = [Post]()
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
@@ -42,7 +31,7 @@ class CollectionViewController: UIViewController {
         
         self.collectionView.reloadData()
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //self.performSegueWithIdentifier("LoginSegue", sender: nil)
         } else {
             //    self.performSegueWithIdentifier("ToProfile", sender: nil)
@@ -131,27 +120,6 @@ class CollectionViewController: UIViewController {
         }
     }
     
-    @IBAction func onCommentTapped(sender: AnyObject) {
-        
-    }
-    @IBOutlet weak var onLikeTapped: UIButton!
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NewPhotoSegue"
-        {
-            let dvc = segue.destinationViewController as! NewPhotoViewController
-            
-            let cell = sender as! UICollectionViewCell
-            
-            let indexPath = self.collectionViewCell!.indexPathForCell(cell)
-            
-            dvc.photo = photos [(indexPath?.row)!] as! NewPost
-            
-            
-        }
-        
-    }
-
     // MARK: - UIImagePickeControllerDelegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
@@ -198,5 +166,4 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
-}
 }

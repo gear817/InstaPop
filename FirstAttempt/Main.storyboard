@@ -322,9 +322,6 @@
                                                         <constraint firstAttribute="height" constant="30" id="ctY-HQ-cMm"/>
                                                     </constraints>
                                                     <state key="normal" image="chatbubble"/>
-                                                    <connections>
-                                                        <action selector="onCommentTapped:" destination="AdR-kD-Ydf" eventType="touchUpInside" id="vOf-2f-L76"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -411,7 +408,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="e6u-fI-RVe" id="cNx-sb-hw5"/>
-                        <outlet property="onLikeTapped" destination="9WU-zR-Tj7" id="51n-cg-5Ek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-wE-Q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -563,14 +559,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
-                                <rect key="frame" x="32" y="175" width="250" height="250"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMp-zf-xP2">
+                                <rect key="frame" x="175" y="127" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="00w-5O-Sed"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Caption (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
-                                <rect key="frame" x="321" y="175" width="201" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-9N-0XI">
+                                <rect key="frame" x="247" y="83" width="131" height="30"/>
+                                <state key="normal" title="username"/>
+                                <connections>
+                                    <action selector="onUsernameTapped:" destination="yP1-Hh-yS3" eventType="touchUpInside" id="gPL-HA-1Cv"/>
+                                    <segue destination="5Wz-oy-xdD" kind="show" id="Rey-L7-d0h"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
+                                <rect key="frame" x="180" y="409" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Cfu-1l-Wxp"/>
+                                    <constraint firstAttribute="width" constant="240" id="g87-pa-31J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elC-p6-Dns">
+                                <rect key="frame" x="0.0" y="561" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JKr-dh-bGZ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="I6W-Ai-Vxa">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Q3i-Bc-hSp">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YVN-aF-Lvk">
+                                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Share"/>
+                                                <connections>
+                                                    <action selector="onTapShare:" destination="yP1-Hh-yS3" eventType="touchUpInside" id="5tc-V5-nKK"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter Caption (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-hh-S3j">
+                                <rect key="frame" x="212" y="380" width="201" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="U5n-cv-bOf"/>
                                 </constraints>
@@ -578,41 +612,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-9N-0XI">
-                                <rect key="frame" x="235" y="89" width="131" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="N1R-RI-4Jf"/>
-                                </constraints>
-                                <state key="normal" title="username"/>
-                                <connections>
-                                    <action selector="onUsernameTapped:" destination="yP1-Hh-yS3" eventType="touchUpInside" id="gPL-HA-1Cv"/>
-                                    <segue destination="5Wz-oy-xdD" kind="show" id="Rey-L7-d0h"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-dg-cVx">
-                                <rect key="frame" x="301" y="204" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Vad-8s-lHj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="N1u-dg-cVx" secondAttribute="trailing" constant="39" id="08d-2v-frj"/>
-                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="top" secondItem="Kcr-9N-0XI" secondAttribute="bottom" constant="56" id="3yA-nd-Hin"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vpa-hh-S3j" secondAttribute="trailing" constant="58" id="4cZ-Rj-lCI"/>
-                            <constraint firstItem="N1u-dg-cVx" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="19" id="7ZX-It-zCj"/>
-                            <constraint firstItem="Kcr-9N-0XI" firstAttribute="top" secondItem="DxH-v7-wXX" secondAttribute="bottom" constant="25" id="LQJ-Ck-H3T"/>
-                            <constraint firstItem="WMp-zf-xP2" firstAttribute="top" secondItem="Kcr-9N-0XI" secondAttribute="bottom" constant="56" id="Y2B-jE-A3y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kcr-9N-0XI" secondAttribute="trailing" constant="214" id="ZAF-tk-gs9"/>
-                            <constraint firstItem="Kcr-9N-0XI" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="215" id="mSo-sS-7hH"/>
-                            <constraint firstItem="WMp-zf-xP2" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="12" id="o7q-hd-IaD"/>
-                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="39" id="q44-CE-I7t"/>
-                            <constraint firstItem="N1u-dg-cVx" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="19" id="vkQ-7K-SSY"/>
-                            <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="Vpa-hh-S3j" secondAttribute="bottom" constant="8" id="yrX-zs-xYz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vpa-hh-S3j" secondAttribute="trailing" constant="167" id="4cZ-Rj-lCI"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="top" secondItem="Vpa-hh-S3j" secondAttribute="bottom" constant="8" id="ICZ-4q-XXu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="elC-p6-Dns" secondAttribute="trailing" constant="-20" id="MOY-lb-1Lz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="elC-p6-Dns" secondAttribute="bottom" constant="-5" id="QdW-98-WpU"/>
+                            <constraint firstItem="N1u-dg-cVx" firstAttribute="centerX" secondItem="ESa-aR-U4N" secondAttribute="centerX" id="bCg-C6-5MN"/>
+                            <constraint firstItem="elC-p6-Dns" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="-20" id="ngs-Ks-tL7"/>
+                            <constraint firstItem="WMp-zf-xP2" firstAttribute="leading" secondItem="ESa-aR-U4N" secondAttribute="leadingMargin" constant="155" id="o7q-hd-IaD"/>
+                            <constraint firstItem="Vpa-hh-S3j" firstAttribute="leading" secondItem="WMp-zf-xP2" secondAttribute="trailing" constant="-213" id="q44-CE-I7t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f39-a1-och">
