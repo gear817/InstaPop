@@ -16,11 +16,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     var photos: NSMutableArray = []
     var currentUserPhotosMutableArray: NSMutableArray = []
-
-    
     
     @IBOutlet weak var collectionViewCell: UICollectionView!
-    
     
     override func viewDidAppear(animated: Bool) {
         
@@ -82,6 +79,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
     }
     
+
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
