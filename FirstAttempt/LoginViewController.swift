@@ -8,16 +8,30 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var label: UILabel!
+
+    var ref: Firebase!
+    var authHelper: TwitterAuthHelper!
+    var accounts: [ACAccount]!
+    var account = ACAccount()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rain")!)
     }
 
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        ref = Firebase(url: "instapop.firebaseIO.com")
+        authHelper = TwitterAuthHelper(firebaseRef: ref, apiKey: "qZkofmNv4ixT40GrHesLSvmzW")
+    }
+    
+    
+    
     
     @IBAction func TryLogin(sender: AnyObject) {
         let email = emailField.text
@@ -31,6 +45,8 @@ class LoginViewController: UIViewController {
                 }else {
                     //be sure the correct uid is stored
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+//                    self.emailField.resignFirstResponder()
+//                    self.passwordField.resignFirstResponder()
                     //enter the app
                     self.performSegueWithIdentifier("ToActivityFeed", sender: nil)
                 }
@@ -51,12 +67,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-        
-    @IBAction func onResetButtonTapped(sender: AnyObject) {
-        
-    }
     
-
+    
     func loginErrorAlert(title: String, message: String) {
         // called upon login error to let the user know login didn't work
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -67,8 +79,22 @@ class LoginViewController: UIViewController {
 
     
     
-    
+    @IBAction func onTwitterTapped(sender: AnyObject) {
+        self.authWithTwitter()
+    }
 
+    
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        self.emailField.resignFirstResponder()
+//        self.passwordField.resignFirstResponder()
+//    }
+//    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+//        view.endEditing(true)
+//        return true
+//    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

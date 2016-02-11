@@ -15,6 +15,7 @@ class DataService {
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
     private var _PHOTO_REF = Firebase(url: "\(BASE_URL)/photos")
+    let rootRef = Firebase(url:"instapop.firebaseIO.com")
     
     var BASE_REF: Firebase {
         return _BASE_REF
@@ -38,7 +39,8 @@ class DataService {
     }
     
     
-    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+    func createNewAccount(uid: String, user: Dictionary<String, AnyObject>) {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
+    
 }
