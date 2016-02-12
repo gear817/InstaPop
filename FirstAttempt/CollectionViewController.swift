@@ -128,7 +128,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         let cell: PostCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! PostCollectionViewCell
         
         if photos.count > 0 {
-            cell.imageView.image = photos [indexPath.row] as! UIImage
+            cell.imageView.image = photos [indexPath.row] as? UIImage
         }
         
         return cell

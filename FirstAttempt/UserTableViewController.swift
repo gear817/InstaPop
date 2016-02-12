@@ -19,7 +19,7 @@ class UserTableViewController: UITableViewController {
     
     // MARK: Properties
     
-    var currentUsers: [String] = [String]()
+    var currentUsers: [String]?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ class UserTableViewController: UITableViewController {
         
         usersRef.observeEventType(.ChildAdded, withBlock: { (snap: FDataSnapshot!) in
             
-            print(snap.value)
-    
-            self.currentUsers.append(snap.value as! String)
+            let key = snap.value["userName"] as! String
             
-            let row = self.currentUsers.count - 1
+            let row = self.currentUsers!.count - 1
+            
+            self.currentUsers?.append(key)
             
             let indexPath = NSIndexPath(forRow: row, inSection: 0)
             
@@ -45,7 +45,7 @@ class UserTableViewController: UITableViewController {
             let userToFind: String! = snap.value as! String
             
             // Loop to find the email in the array
-            for(index, username) in self.currentUsers.enumerate() {
+            for(index, username) in self.currentUsers!.enumerate() {
                 
                 // If the email is found, delete it from the table with an animation
                 if username == userToFind {
