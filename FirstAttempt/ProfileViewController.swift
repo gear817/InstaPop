@@ -40,7 +40,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //Head back to login
         let loginViewcontroller = self.storyboard!.instantiateViewControllerWithIdentifier("Login")
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewcontroller
-        
+        print("method firing")
+//        if (TwitterAuthHelper) {
+//
+//        }
     }
   
 
