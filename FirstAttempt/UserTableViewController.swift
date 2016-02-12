@@ -27,7 +27,7 @@ class UserTableViewController: UITableViewController {
         
         usersRef.observeEventType(.ChildAdded, withBlock: { (snap: FDataSnapshot!) in
             
-            print(snap.value["userName"])
+            print(snap.value)
     
             self.currentUsers.append(snap.value as! String)
             

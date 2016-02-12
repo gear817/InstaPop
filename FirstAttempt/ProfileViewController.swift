@@ -17,14 +17,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
 
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    
     
     @IBAction func onFollowButtonTapped(sender: AnyObject) {
     }
