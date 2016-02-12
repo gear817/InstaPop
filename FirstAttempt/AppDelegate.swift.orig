@@ -7,6 +7,10 @@
 //
 
 import UIKit
+<<<<<<< HEAD
+import CoreData
+=======
+>>>>>>> joe_upload
 import Firebase
 
 @UIApplicationMain

@@ -177,11 +177,15 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         
         
         if photos.count > 0 {
-            cell.imageView.image = photos [indexPath.row] as? UIImage
+<<<<<<< HEAD
+            cell.imageView.image = (photos [indexPath.row] as! UIImage)
         }
         
         if commentsArray.count > 0 {
             cell.commentTextView.text = (commentsArray [indexPath.row] as! String)
+=======
+            cell.imageView.image = photos [indexPath.row] as? UIImage
+>>>>>>> joe_upload
         }
         
         

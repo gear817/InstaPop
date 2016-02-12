@@ -134,7 +134,11 @@
 				303A27BA1C64060600CDF107 /* AppDelegate.swift */,
 				DF84990E1C6BCB4800451B3C /* NewPost.swift */,
 				30BBABD61C69A1A3009518E0 /* Constants.swift */,
+<<<<<<< HEAD
+				30BAD3211C6C3185008623EE /* LogInViewConroller + TwitterFunctionality.swift */,
+=======
 				DF25BA801C6D195000865B1B /* Users.swift */,
+>>>>>>> joe_upload
 				30BBABD81C69A26B009518E0 /* DataService.swift */,
 				303A27BC1C64060600CDF107 /* ViewController.swift */,
 				30BBABDA1C69A5AD009518E0 /* LoginViewController.swift */,
@@ -145,8 +149,11 @@
 				303A27D41C644EB100CDF107 /* CCollectionViewCell.swift */,
 				303A27D61C6468D600CDF107 /* NewPhotoViewController.swift */,
 				303A27DA1C646D4B00CDF107 /* MapViewController.swift */,
+<<<<<<< HEAD
+=======
 				DF25BA7E1C6D11CE00865B1B /* UserTableViewController.swift */,
 				303A27D81C6468F100CDF107 /* ProfileViewController.swift */,
+>>>>>>> joe_upload
 				30BAD31D1C6A53E8008623EE /* Main.storyboard */,
 				303A27C11C64060600CDF107 /* Assets.xcassets */,
 				303A27C31C64060600CDF107 /* LaunchScreen.storyboard */,

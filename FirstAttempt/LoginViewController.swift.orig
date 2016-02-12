@@ -76,5 +76,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
 
+<<<<<<< HEAD
+    
+    
+    @IBAction func onTwitterTapped(sender: AnyObject) {
+        self.authWithTwitter()
+    }
+
+    
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        self.emailField.resignFirstResponder()
+//        self.passwordField.resignFirstResponder()
+//    }
+//    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+//        view.endEditing(true)
+//        return true
+//    }
+    
+    
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+=======
+>>>>>>> joe_upload
 
 }
